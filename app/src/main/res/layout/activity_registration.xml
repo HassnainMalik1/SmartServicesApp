@@ -7,6 +7,70 @@
     tools:context=".RegistrationActivity">
 
 
+    <LinearLayout
+        android:layout_margin="20dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/user_placeholder"
+            android:layout_width="150dp"
+            android:layout_height="150dp"/>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+        android:hint="Enter Name..."
+        android:paddingLeft="10dp"
+
+        android:id="@+id/registrationUserName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:hint="Enter Email..."
+            android:paddingLeft="10dp"
+            android:id="@+id/registrationUserEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:hint="Enter City..."
+            android:paddingLeft="10dp"
+            android:id="@+id/registrationUserCity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:hint="Enter Address..."
+            android:paddingLeft="10dp"
+            android:lines="3"
+            android:id="@+id/registrationUserAddress"
+            android:textAlignment="textStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+        <Button
+            android:textColor="@android:color/white"
+            android:background="@drawable/bg_button"
+            android:layout_margin="20dp"
+            android:textSize="14sp"
+            android:text="Register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+        <TextView
+            android:layout_margin="10dp"
+            android:layout_gravity="right"
+            android:text="Already have an account?"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
 
 
 </RelativeLayout>
