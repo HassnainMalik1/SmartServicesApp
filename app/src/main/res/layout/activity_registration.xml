@@ -68,6 +68,7 @@
 
         <RadioGroup
 
+            android:id="@+id/registrationACTypeRG"
             android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
@@ -75,11 +76,14 @@
 
 
             <RadioButton
+
+                android:id="@+id/buyerRB"
                 android:layout_margin="10dp"
                 android:text="Buyer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <RadioButton
+                android:id="@+id/sellerRB"
                 android:layout_margin="10dp"
                 android:text="Seller"
                 android:layout_width="wrap_content"

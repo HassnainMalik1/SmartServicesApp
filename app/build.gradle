@@ -29,6 +29,7 @@ dependencies {
 
     //firebase library
     implementation 'com.google.firebase:firebase-auth:19.0.0'
+    implementation 'com.google.firebase:firebase-database:19.1.0'
 
     //material edit text new
     implementation 'com.rengwuxian.materialedittext:library:2.1.4'
