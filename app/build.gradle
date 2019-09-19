@@ -25,4 +25,13 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    //material edit text new
+    implementation 'com.rengwuxian.materialedittext:library:2.1.4'
+
+    //easy permissions
+    implementation 'pub.devrel:easypermissions:1.2.0'
+
+    //alerter library
+    implementation 'com.tapadoo.android:alerter:2.0.6'
 }
