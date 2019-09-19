@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "130060768938",
+    "firebase_url": "https://home-maintenance-e55a1.firebaseio.com",
+    "project_id": "home-maintenance-e55a1",
+    "storage_bucket": "home-maintenance-e55a1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:130060768938:android:aeb869dbdf1d504adde2d3",
+        "android_client_info": {
+          "package_name": "com.zmicrotech.smartservicesapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "130060768938-bn6u66087j1jai8v53a9sv8lic71jjn8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.zmicrotech.smartservicesapp",
+            "certificate_hash": "5947d4a78e5385bb1b894ee95a41359b2e3564c7"
+          }
+        },
+        {
+          "client_id": "130060768938-qjo5hqmrcm7gjte1crimaik2rjp3jlkl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3X2KL0tTp1QgiAdsFqP5SUmtfK1nwJLc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "130060768938-qjo5hqmrcm7gjte1crimaik2rjp3jlkl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

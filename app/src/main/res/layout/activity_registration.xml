@@ -35,6 +35,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:hint="Enter Password..."
+            android:paddingLeft="10dp"
+            android:inputType="textPassword"
+            android:id="@+id/registrationUserPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
         <com.rengwuxian.materialedittext.MaterialEditText
             android:hint="Enter City..."
             android:paddingLeft="10dp"
@@ -51,8 +61,35 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
+        <TextView
+            android:text="Select Account Type:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <RadioGroup
+
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+
+            <RadioButton
+                android:layout_margin="10dp"
+                android:text="Buyer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <RadioButton
+                android:layout_margin="10dp"
+                android:text="Seller"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </RadioGroup>
+
 
         <Button
+            android:id="@+id/registrationBtn"
             android:textColor="@android:color/white"
             android:background="@drawable/bg_button"
             android:layout_margin="20dp"
