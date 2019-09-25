@@ -1,6 +1,7 @@
 package com.zmicrotech.smartservicesapp;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Build;
@@ -18,6 +19,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -47,18 +49,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
+import android.widget.Button;
 import android.widget.Toast;
 
 public class Home extends AppCompatActivity implements OnMapReadyCallback {
 
     private AppBarConfiguration mAppBarConfiguration;
     private GoogleMap mMap;
-
+    Button confirmLocationBtn;
     private LocationRequest locationRequest;
     private LocationCallback locationCallback;
     private FusedLocationProviderClient fusedLocationProviderClient;
     private Marker currentUserMarker;
     private Location lastLocation;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,9 +86,9 @@ public class Home extends AppCompatActivity implements OnMapReadyCallback {
                 R.id.nav_tools, R.id.nav_share, R.id.nav_send)
                 .setDrawerLayout(drawer)
                 .build();
-//        NavController navController = Navigation.findNavController(this, R.id.map);
-//        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
-//        NavigationUI.setupWithNavController(navigationView, navController);
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
+        NavigationUI.setupWithNavController(navigationView, navController);
 
 
         checkPermission();
@@ -96,6 +100,16 @@ public class Home extends AppCompatActivity implements OnMapReadyCallback {
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+
+        confirmLocationBtn = (Button) findViewById(R.id.confirmLocationBtn);
+        confirmLocationBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ServicesActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void checkPermission() {
@@ -168,6 +182,36 @@ public class Home extends AppCompatActivity implements OnMapReadyCallback {
             }
         });
 
+//        mMap.setOnCameraChangeListener(new GoogleMap.OnCameraChangeListener() {
+//            @Override
+//            public void onCameraChange(CameraPosition cameraPosition) {
+////                Toast.makeText(Home.this, ""+cameraPosition.target.latitude, Toast.LENGTH_SHORT).show();
+//                if (mMap != null) {
+//
+//                    if (currentUserMarker != null) currentUserMarker.remove();
+//                    currentUserMarker = mMap.addMarker(new MarkerOptions()
+//                            .position(new LatLng(cameraPosition.target.latitude, cameraPosition.target.longitude))
+//                            .title("You!").icon(BitmapDescriptorFactory.fromResource(R.drawable.pickimage)));
+////                    mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentUserMarker.getPosition(), 12.0f));
+//                }
+//            }
+//        });
+
+        mMap.setOnCameraIdleListener(new GoogleMap.OnCameraIdleListener() {
+            @Override
+            public void onCameraIdle() {
+                if (mMap != null) {
+
+                    if (currentUserMarker != null) currentUserMarker.remove();
+                    LatLng latLng = mMap.getCameraPosition().target;
+                    currentUserMarker = mMap.addMarker(new MarkerOptions()
+
+                            .position(new LatLng(latLng.latitude, latLng.longitude))
+                            .title("You!").icon(BitmapDescriptorFactory.fromResource(R.drawable.pickimage)));
+//                    mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentUserMarker.getPosition(), 12.0f));
+                }
+            }
+        });
 
 
 
